@@ -16,7 +16,7 @@ set-alias desktop "Desktop.ps1"
 #Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
 
-(@(&"C:/Users/Howie/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe" init pwsh --config="C:\github\\ohmyposhv3-v2.omp.json" --print) -join "`n") | Invoke-Expression
+(@(&"C:/Users/z157425/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe" init pwsh --config="C:\github\\dotfiles-windows\ohmyposhv3-v2.omp.json" --print) -join "`n") | Invoke-Expression
 
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
@@ -31,7 +31,7 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 
 # PowerShell parameter completion shim for the dotnet CLI
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
-     param($commandName, $wordToComplete, $cursorPosition)
+     param($commandName, $wordToComplete, $cursorPosition
          dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
          }
