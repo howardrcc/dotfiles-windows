@@ -16,7 +16,7 @@ set-alias desktop "Desktop.ps1"
 #Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
 
-(@(&"C:/Users/z157425/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe" init pwsh --config="C:\github\\dotfiles-windows\ohmyposhv3-v2.omp.json" --print) -join "`n") | Invoke-Expression
+(@(&"C:/Users/z157425/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe" init pwsh --config="C:\workspace\\dotfiles-windows\ohmyposhv3-v2.omp.json" --print) -join "`n") | Invoke-Expression
 
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
