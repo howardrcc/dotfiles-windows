@@ -2,6 +2,7 @@
 # - ohmyposh, PSReadline
 # - $env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json
 # place this file in [Environment]::GetFolderPath("MyDocuments")+"\PowerShell"
+# see https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3
  
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
