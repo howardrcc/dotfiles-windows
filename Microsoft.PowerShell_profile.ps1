@@ -1,7 +1,7 @@
-  
-
-
-# C:\Users\Howie\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json
+# check install.ps1 first, this file requires 
+# - ohmyposh, PSReadline
+# - $env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json
+# place this file in [Environment]::GetFolderPath("MyDocuments")+"\PowerShell"
  
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
@@ -15,8 +15,9 @@ Import-Module -Name PSReadLine
 set-alias desktop "Desktop.ps1"
 #Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
+$configfile = "C:\github\\dotfiles-windows\ohmyposhv3-v2.omp.json"
 
-(@(&"C:/Users/Howie/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe" init pwsh --config="C:\github\\ohmyposhv3-v2.omp.json" --print) -join "`n") | Invoke-Expression
+(@(&"$env:USERPROFILE\\AppData\\Local\\Programs\\oh-my-posh\\bin\\oh-my-posh.exe" init pwsh --config=$configfile --print) -join "`n") | Invoke-Expression
 
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
