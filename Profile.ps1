@@ -1,7 +1,5 @@
   
 
-
-# C:\Users\Howie\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json
  
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
@@ -11,13 +9,14 @@ using namespace System.Management.Automation.Language
 #Import-Module posh-git
 Import-Module -Name Terminal-Icons
 Import-Module -Name PSReadLine
-#Import-Module oh-my-posh
-set-alias desktop "Desktop.ps1"
 #Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
 
-(@(&"C:/Users/z157425/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe" init pwsh --config="C:\workspace\\dotfiles-windows\ohmyposhv3-v2.omp.json" --print) -join "`n") | Invoke-Expression
+$posh=Join-Path $HOME -ChildPath "appdata/local/programs/oh-my-posh/bin/oh-my-posh.exe"
+(@(& $posh init pwsh --config=$(join-path $pwd 'ohmyposhv3-v2.omp.json') --print) -join "`n") | Invoke-Expression
+# C:\Users\Howie\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json
 
+#main
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
@@ -31,7 +30,7 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 
 # PowerShell parameter completion shim for the dotnet CLI
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
-     param($commandName, $wordToComplete, $cursorPosition
+     param($commandName, $wordToComplete, $cursorPosition)
          dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
          }
