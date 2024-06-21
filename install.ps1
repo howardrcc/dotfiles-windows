@@ -12,12 +12,15 @@ Install-Module z -AllowClobber
 Install-Module -Name Terminal-Icons
 #Import-Module Terminal-Icons
 
+#get a cool font with terminal icons @ www.nerdfonts.com
+
+
 # PSReadLine
 # see github for instructions
 # you may need to install/update it from cmd.exe because it's in use 
 # powershell -noprofile -command "Install-Module PSReadLine -AllowPrerelease"
 # otherwise try: Install-Module PSReadLine -AllowPrerelease -Force
-https://github.com/PowerShell/PSReadLine/archive/refs/tags/v2.2.5.zip 
+curl wget https://github.com/PowerShell/PSReadLine/archive/refs/tags/v2.2.5.zip -O
 
 #need 2.2.5
 $(get-module PSReadLine).Version

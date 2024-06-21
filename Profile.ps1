@@ -1,8 +1,8 @@
   
 
  
-using namespace System.Management.Automation
-using namespace System.Management.Automation.Language
+#using namespace System.Management.Automation
+#using namespace System.Management.Automation.Language
  
 #if ($host.Name -eq 'ConsoleHost'){    Install-Module PSReadLine -AllowPrerelease -Force}
 #Import-Module PSColors
@@ -11,6 +11,7 @@ Import-Module -Name Terminal-Icons
 Import-Module -Name PSReadLine
 #Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
+$configfile = "C:\github\\dotfiles-windows\ohmyposhv3-v2.omp.json"
 
 $posh=Join-Path $HOME -ChildPath "appdata/local/programs/oh-my-posh/bin/oh-my-posh.exe"
 (@(& $posh init pwsh --config=$(join-path $pwd 'ohmyposhv3-v2.omp.json') --print) -join "`n") | Invoke-Expression
@@ -30,6 +31,7 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 
 # PowerShell parameter completion shim for the dotnet CLI
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
+     param($commandName, $wordToComplete, $cursorPosition)
      param($commandName, $wordToComplete, $cursorPosition)
          dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
