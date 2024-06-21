@@ -1,9 +1,5 @@
-  
-
- 
 #using namespace System.Management.Automation
 #using namespace System.Management.Automation.Language
- 
 #if ($host.Name -eq 'ConsoleHost'){    Install-Module PSReadLine -AllowPrerelease -Force}
 #Import-Module PSColors
 #Import-Module posh-git
@@ -11,10 +7,11 @@ Import-Module -Name Terminal-Icons
 Import-Module -Name PSReadLine
 #Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
-$configfile = "C:\github\\dotfiles-windows\ohmyposhv3-v2.omp.json"
 
+$docs = $([Environment]::GetFolderPath("mydocuments"))
+$prof = Join-Path -Path $docs -ChildPath 'Powershell'
 $posh=Join-Path $HOME -ChildPath "appdata/local/programs/oh-my-posh/bin/oh-my-posh.exe"
-(@(& $posh init pwsh --config=$(join-path $pwd 'ohmyposhv3-v2.omp.json') --print) -join "`n") | Invoke-Expression
+(@(& $posh init pwsh --config=$(join-path $prof 'ohmyposhv3-v2.json') --print) -join "`n") | Invoke-Expression
 # C:\Users\Howie\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json
 
 #main
@@ -37,8 +34,6 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
          }
  }
-
-# ---
 
 
 # This is an example profile for PSReadLine.
