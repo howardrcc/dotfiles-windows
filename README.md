@@ -1,20 +1,25 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+# Install windows applications, package-manager, dotfiles, etc
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Set Execution policity (temporarily to unrestricted so you can run .ps1 script-files).
+You also need it for using the ETL-client
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+```powershell
+Set-ExecutionPolicy Unrestricted -Force;
+```
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+
+In order to install chocolate package manager run in administrative powershell:
+
+```powershell
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+then run ./install.ps1
+see https://community.chocolatey.org/packages for more packages
+
+
+# install winget package manager from ms store
+
+If the link below doesnt work, check https://github.com/microsoft/winget-cli
+https://www.microsoft.com/p/app-installer/9nblggh4nns1
