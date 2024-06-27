@@ -13,10 +13,13 @@ write-host 'the run: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.N
 
 # https://ravpn.radboudumc.nl
 
+Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
+refreshenv
+
 choco feature enable -n allowGlobalConfirmation
 
 choco install powershell-core
-choco install googlechrome  firefox
+choco install googlechrome firefox
 choco install microsoft-windows-terminal  
 choco install git tortoisegit
 choco install vscode #neovim
