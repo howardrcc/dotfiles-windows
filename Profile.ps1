@@ -1,11 +1,12 @@
+#Requires -Modules Terminal-Icons
+#Requires -Modules PSReadLine
+
+Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
+
 #using namespace System.Management.Automation
 #using namespace System.Management.Automation.Language
-#if ($host.Name -eq 'ConsoleHost'){    Install-Module PSReadLine -AllowPrerelease -Force}
 #Import-Module PSColors
-#Import-Module posh-git
-Import-Module -Name Terminal-Icons
-Import-Module -Name PSReadLine
-#Set-Theme ParadoxGlucose
+#Import-Module posh-git#Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
 
 $docs = $([Environment]::GetFolderPath("mydocuments"))
@@ -13,6 +14,7 @@ $prof = Join-Path -Path $docs -ChildPath 'Powershell'
 $posh=Join-Path $HOME -ChildPath "appdata/local/programs/oh-my-posh/bin/oh-my-posh.exe"
 (@(& $posh init pwsh --config=$(join-path $prof 'ohmyposhv3-v2.json') --print) -join "`n") | Invoke-Expression
 # C:\Users\Howie\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json
+
 
 #main
 
