@@ -4,12 +4,17 @@
 #Import-Module PSColors
 #Import-Module posh-git
 Import-Module -Name Terminal-Icons
-Import-Module -Name PSReadLine
+if ($null -eq $(get-module -Name PSReadLine)) {
+    Import-Module -Name PSReadLine
+}
+Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 #Set-Theme ParadoxGlucose
+$env:KOMOREBI_CONFIG_HOME="$env:USERPROFILE\.config\komorebi"
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
 
 $docs = $([Environment]::GetFolderPath("mydocuments"))
 $prof = Join-Path -Path $docs -ChildPath 'Powershell'
+
 $posh=Join-Path $HOME -ChildPath "appdata/local/programs/oh-my-posh/bin/oh-my-posh.exe"
 (@(& $posh init pwsh --config=$(join-path $prof 'ohmyposhv3-v2.json') --print) -join "`n") | Invoke-Expression
 # C:\Users\Howie\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json

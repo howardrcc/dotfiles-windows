@@ -11,3 +11,22 @@ write-host 'the run: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.N
 # https://ravpn.radboudumc.nl
 
 choco feature enable -n allowGlobalConfirmation
+
+#New-Item -ItemType SymbolicLink	-Path '' -Target ''
+$docs = $([Environment]::GetFolderPath("mydocuments"))
+$prof = Join-Path -Path $docs -ChildPath 'Powershell'
+
+#need admin or developermode for creating sn's
+New-Item -ItemType SymbolicLink	 -Path "$prof\Profile.ps1" -Target $pwd\Profile.ps1
+New-Item -ItemType SymbolicLink	 -Path "$prof\ohmyposhv3-v2.json" -Target $pwd\ohmyposhv3-v2.json
+
+#yasb
+#komorebi
+
+#Remove-Item "$prof\ohmyposhv3-v2.json"
+
+#rm $prof\Profile.ps1
+cp Profile.ps1 
+cp ohmyposhv3-v2.json $prof
+
+#ls C:\Users\howie\Documents\Powershell   
