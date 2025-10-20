@@ -1,0 +1,139 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.37/schema.json",
+  "app_specific_configuration_path": "C:/Users/z157425/.config/komorebi/applications.json",
+  //"app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "mouse_follows_focus": false,
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 0,
+  "default_container_padding": 0,
+  "border": false,
+  "border_width": 0,
+  "border_offset": 0,
+  "theme": {
+    "palette": "Base16",
+    "name": "Ashes",
+    "unfocused_border": "Base03",
+    "bar_accent": "Base0D"
+  },
+  
+  "window_rules": [
+    {
+      "kind": "exe",
+      "id": "brave.exe",
+      "matching_strategy": "equals",
+      "workspace": 0
+    },
+    {
+      "kind": "exe",
+      "id": "firefox.exe",
+      "matching_strategy": "equals",
+      "workspace": 0
+    },
+    {
+      "kind": "exe",
+      "id": "zen.exe",
+      "matching_strategy": "equals",
+      "workspace": 0
+    },
+
+    {
+      "kind": "exe",
+      "id": "notepad.exe",
+      "matching_strategy": "equals",
+      "workspace": 4
+    },
+    {
+      "kind": "class",
+      "id": "Chrome_WidgetWin_1",
+      "matching_strategy": "equals", 
+      "workspace": 1
+    },
+    {
+      "kind": "title",
+      "id": "Visual Studio Code",
+      "matching_strategy": "contains",
+      "workspace": 4
+    },
+    {
+      "kind": "exe",
+      "id": "Code.exe",
+      "matching_strategy": "contains",
+      "workspace": 3
+    },
+      {
+      "kind": "exe",
+      "id": "azuredatastudio.exe",
+      "matching_strategy": "contains",
+      "workspace": 1
+    },
+        {
+      "kind": "exe",
+      "id": "wezterm-gui.exe",
+      "matching_strategy": "contains",
+      "workspace": 0
+    },
+    {
+      "kind": "exe",
+      "id": "OUTLOOK.EXE",
+      "matching_strategy": "contains",
+      "workspace": 4
+    }
+    ],
+    "display_index_preferences": {
+      "0": "408NTHM3P305"//
+      //"1": "Default_Monitor-1&1f0c3c2f&0&UID257"
+      //"2": "MONITOR_3_ID", "408NTHM3P305"  LG UW
+    },
+    //"bar_configurations": [
+      // this bar uses "monitor_index": 0,
+     // "komorebi.bar.json",
+      // this bar uses "monitor_index": 1,
+      //"komorebi.bar.json"
+      // this bar uses "monitor_index": 2,
+      //"komorebi.bar.json"
+    //],
+  
+  "monitors": [
+    //monitor 1
+    {
+      "workspaces": [
+        
+        {
+          "name": "I",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "II",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "III",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "IV",
+          "layout": "UltrawideVerticalStack"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        
+        {
+          "name": "1",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "2",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "3",
+          "layout": "UltrawideVerticalStack"
+        }
+      ]
+    }
+    //monitor2 
+  ]
+}
