@@ -11,7 +11,8 @@ Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 
 $docs = $([Environment]::GetFolderPath("mydocuments"))
 $prof = Join-Path -Path $docs -ChildPath 'Powershell'
-$posh=Join-Path $HOME -ChildPath "appdata/local/programs/oh-my-posh/bin/oh-my-posh.exe"
+#$posh=Join-Path $HOME -ChildPath "appdata/local/programs/oh-my-posh/bin/oh-my-posh.exe"
+$posh= (Get-Command oh-my-posh).Source
 (@(& $posh init pwsh --config=$(join-path $prof 'ohmyposhv3-v2.json') --print) -join "`n") | Invoke-Expression
 # C:\Users\Howie\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json
 

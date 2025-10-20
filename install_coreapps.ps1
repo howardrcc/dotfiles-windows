@@ -19,8 +19,12 @@ refreshenv
 choco feature enable -n allowGlobalConfirmation
 
 choco install powershell-core
+choco install powertoys
 choco install googlechrome firefox
-choco install microsoft-windows-terminal  
-choco install git tortoisegit
+# choco install microsoft-windows-terminal  
+choco install git
+choco install tortoisegit
 choco install vscode #neovim
-choco install sql-server-management-studio
+choco install neovim
+choco install 7zip
+#choco install sql-server-management-studio

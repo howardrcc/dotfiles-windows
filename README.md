@@ -23,3 +23,13 @@ see https://community.chocolatey.org/packages for more packages
 
 If the link below doesnt work, check https://github.com/microsoft/winget-cli
 https://www.microsoft.com/p/app-installer/9nblggh4nns1
+
+#not working on win 11
+Copy/pasting files with RDP
+Intranet Zones in Edge - steeds opnieuw inloggen voor intranet radboudumc
+
+# create a symlink in powershell
+
+New-Item -Path "C:\Users\Z157425\Documents\Powershell\profile.ps1" -Item "SymbolicLink" -Value "C:\workspace\dotfiles-windows\Profile.ps1"
+
+New-Item -Path "C:\Path\To\Link" -ItemType "SymbolicLink" -Value "C:\Path\To\Target"
