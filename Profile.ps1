@@ -2,7 +2,7 @@
 #Requires -Modules PSReadLine
 
 Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
-
+Set-Alias vi nvim
 #using namespace System.Management.Automation
 #using namespace System.Management.Automation.Language
 #Import-Module PSColors

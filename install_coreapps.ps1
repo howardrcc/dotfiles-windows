@@ -1,30 +1,81 @@
 ﻿
 write-host 'see README.md for instructions!'
-write-host ''
-write-host 'install winget package manager from ms store'
-write-host 'https://github.com/microsoft/winget-cli'
-write-host 'https://www.microsoft.com/p/app-installer/9nblggh4nns1'
-write-host ''
-write-host 'install chocolatey package manager'
-write-host 'has to be run or copied directly into terminal administrative mode'
-write-host ''
-write-host 'Set-ExecutionPolicy Unrestricted -Force (or [A]ccept)'
-write-host 'the run: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))'
-
+ 
 # https://ravpn.radboudumc.nl
+
+
+.\install_scoop.ps1 
+.\install_choco.ps1
 
 Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 refreshenv
 
 choco feature enable -n allowGlobalConfirmation
 
-choco install powershell-core
-choco install powertoys
-choco install googlechrome firefox
-# choco install microsoft-windows-terminal  
+#basics 
 choco install git
 choco install tortoisegit
+choco install 7zip
+
+choco install powershell-core
+choco install powertoys
+#winget install --id Microsoft.PowerToys  --source winget
+
+# choco install microsoft-windows-terminal  
+
+#IDE
 choco install vscode #neovim
 choco install neovim
-choco install 7zip
-#choco install sql-server-management-studio
+
+#databases
+choco install sql-server-management-studio
+
+#misc
+winget install ZoomIt
+
+#browsers 
+choco install googlechrome firefox
+winget install --id=Zen-Team.Zen-Browser  -e
+
+#note-taking
+choco install obsidian
+
+#sync files across devices
+choco install syncthing
+#curl https://live.sysinternals.com/ZoomIt.exe -O
+#Invoke-WebRequest https://live.sysinternals.com/ZoomIt.exe -PassThru -Outfile Zoomit.Exe
+
+#development/neoim
+
+choco install nodejs -y
+npm install -g tree-sitter-cli
+
+#neovim yank
+winget install equalsraf.win32yank
+
+
+#c compiler
+winget install --id=BrechtSanders.WinLibs.POSIX.UCRT -e
+
+#andere utilities
+#choco install fzf
+scoop install fzf
+
+#window manager
+
+#taskbar
+winget install --id AmN.yasb
+
+#windowmanager
+winget install -e --id LGUG2Z.komorebi
+
+#shortcut/hotkeys
+winget install LGUG2Z.whkd
+
+#scoop apps
+scoop bucket add extras
+scoop install wezterm
+#choco install wezterm -y
+
+#claude code 
+npm install -g @anthropic-ai/claude-code
