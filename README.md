@@ -36,9 +36,9 @@ Deze dotfiles repository automatiseert de complete setup van een Windows 11 werk
 - ✅ **Utilities** (7zip, Obsidian, Syncthing, PowerToys, ZoomIt)
 - ✅ **Aangepaste configuraties** (Oh My Posh, Nerd Fonts, WezTerm)
 
-*scoop packagemanager die snel is, geen admin rechten nodig heeft.
-**Chocolatey, admin rechten nodig; die hebben we, maar vinden sommigen niet ideaal wellicht
-***winget officiele microsoft packagemanager. Meestal geen admin rechten nodig (afhankelijk van te installeren programma). Loopt soms achter met de nieuwste versies, traag
+**scoop** packagemanager die snel is, geen admin rechten nodig heeft.
+**Chocolatey**, admin rechten nodig; die hebben we, maar vinden sommigen niet ideaal wellicht
+**winget** officiele microsoft packagemanager. Meestal geen admin rechten nodig (afhankelijk van te installeren programma). Loopt soms achter met de nieuwste versies, traag
 
 ---
 
@@ -294,7 +294,7 @@ choco feature enable -n allowGlobalConfirmation
 
 **Extra stap:** Voor tabular model development, installeer handmatig:
 - Extension: "Microsoft Analysis Services Modeling Projects"
-- URL: https://marketplace.visualstudio.com/items?itemName=ProBITools.MicrosoftAnalysisServicesModelingProjects
+- URL: https://marketplace.visualstudio.com/items?itemName=ProBITools.MicrosoftAnalysisServicesModelingProjects2022
 
 **Voor wie:** C#/.NET developers, SSAS developers
 
