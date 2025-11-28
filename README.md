@@ -36,6 +36,10 @@ Deze dotfiles repository automatiseert de complete setup van een Windows 11 werk
 - ✅ **Utilities** (7zip, Obsidian, Syncthing, PowerToys, ZoomIt)
 - ✅ **Aangepaste configuraties** (Oh My Posh, Nerd Fonts, WezTerm)
 
+*scoop packagemanager die snel is, geen admin rechten nodig heeft.
+**Chocolatey, admin rechten nodig; die hebben we, maar vinden sommigen niet ideaal wellicht
+***winget officiele microsoft packagemanager. Meestal geen admin rechten nodig (afhankelijk van te installeren programma). Loopt soms achter met de nieuwste versies, traag
+
 ---
 
 ## 💡 Waarom deze setup gebruiken?
@@ -105,8 +109,19 @@ Deze dotfiles repository automatiseert de complete setup van een Windows 11 werk
 # 1. Sta scripts toe (als Administrator)
 Set-ExecutionPolicy Unrestricted -Force
 
-# 2. Initiele setup (Git + repository clone)
-.\start_here.ps1
+# 2. Initiele setup (Git + repository clone): start_here.ps1
+
+## Windows 11 -> windows 10 context menu
+reg add "HKCU\SOFTWARE\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /f
+
+winget uninstall Microsoft.Git
+winget install --id=Git.Git -e
+
+##add to path
+$env:PATH += ';C:\Program Files\Git\bin'
+
+## wat is de working dir?
+git clone https://radboudumc@dev.azure.com/radboudumc/Business%20Intelligence/_git/dotfiles-windows
 
 # 3. Installeer package managers
 .\install_scoop.ps1
