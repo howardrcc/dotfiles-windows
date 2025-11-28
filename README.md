@@ -5,7 +5,7 @@
 Deze repository bevat PowerShell scripts en configuratiebestanden voor het volledig automatisch opzetten van een professionele ontwikkelomgeving op Windows 11. In plaats van uren handmatig software te installeren en te configureren, automatiseert deze setup alles in een paar commando's.
 
 # TODO
-- [ ] Meegeinstalleerde PowerBI uninstalleren/verwijderen
+- [ ] Meegeinstalleerde PowerBI (Cloud) uninstalleren/verwijderen
 - [x] PowerBI reportserver - download via: https://bia-rpt-acc.radboudumc.nl/reports
 
 ---
