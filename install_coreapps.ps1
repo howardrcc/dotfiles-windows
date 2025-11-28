@@ -79,3 +79,8 @@ scoop install wezterm
 
 #claude code 
 npm install -g @anthropic-ai/claude-code
+
+scoop bucket add extras
+scoop install extras/obsidian
+
+#ssms
