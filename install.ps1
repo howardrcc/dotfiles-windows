@@ -17,6 +17,8 @@ $docs = $([Environment]::GetFolderPath("mydocuments"))
 $prof = Join-Path -Path $docs -ChildPath 'Powershell'
 
 #need admin or developermode for creating sn's
+([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent() ).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
 New-Item -ItemType SymbolicLink	 -Path "$prof\Profile.ps1" -Target $pwd\Profile.ps1
 New-Item -ItemType SymbolicLink	 -Path "$prof\ohmyposhv3-v2.json" -Target $pwd\ohmyposhv3-v2.json
 
