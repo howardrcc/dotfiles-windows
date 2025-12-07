@@ -3,6 +3,8 @@
 
 Write-Host "=== PowerShell Terminal Setup ===" -ForegroundColor Cyan
 
+#Set-ExecutionPolicy Unrestricted
+
 # 1. Install Oh My Posh
 Write-Host "`nInstalleren Oh My Posh..." -ForegroundColor Yellow
 winget install JanDeDobbeleer.OhMyPosh --source winget --scope user --force
