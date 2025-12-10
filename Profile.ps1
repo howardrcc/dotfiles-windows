@@ -20,6 +20,10 @@ $docs = $([Environment]::GetFolderPath("mydocuments"))
 $prof = Join-Path -Path $docs -ChildPath 'Powershell'
 
 $posh=Join-Path $HOME -ChildPath "appdata/local/programs/oh-my-posh/bin/oh-my-posh.exe"
+if ((test-path $posh) -eq $false){
+    $posh=Join-Path $HOME -ChildPath "AppData\Local\Microsoft\WindowsApps\oh-my-posh.exe"
+}
+
 (@(& $posh init pwsh --config=$(join-path $prof 'ohmyposhv3-v2.json') --print) -join "`n") | Invoke-Expression
 # C:\Users\Howie\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json
 

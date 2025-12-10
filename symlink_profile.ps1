@@ -21,4 +21,4 @@ New-Item -Path "$env:USERPROFILE\Documents\PowerShell\profile.ps1" `
          
 New-Item -Path "$env:USERPROFILE\Documents\PowerShell\ohmyposhv3-v2.json" `
          -ItemType "SymbolicLink" `
-         -Value $profile
+         -Value $posh
