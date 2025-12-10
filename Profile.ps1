@@ -1,7 +1,7 @@
 
 #Import-Module PSColors
 #Import-Module posh-git#Set-Theme ParadoxGlucose
-=======
+
 #using namespace System.Management.Automation
 #using namespace System.Management.Automation.Language
 #if ($host.Name -eq 'ConsoleHost'){    Install-Module PSReadLine -AllowPrerelease -Force}
@@ -701,8 +701,4 @@ Set-PSReadLineKeyHandler -Key Ctrl+Shift+t `
     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("dotnet test")
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> db5042344a32978b2a473fdff77e360cf70b4ea7

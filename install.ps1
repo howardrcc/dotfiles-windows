@@ -1,4 +1,4 @@
-﻿write-host 'install winget package manager from ms store'
+write-host 'install winget package manager from ms store'
 write-host 'https://github.com/microsoft/winget-cli'
 write-host 'https://www.microsoft.com/p/app-installer/9nblggh4nns1'
 write-host ''
@@ -19,8 +19,11 @@ $prof = Join-Path -Path $docs -ChildPath 'Powershell'
 #need admin or developermode for creating sn's
 ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent() ).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
-New-Item -ItemType SymbolicLink	 -Path "$prof\Profile.ps1" -Target $pwd\Profile.ps1
-New-Item -ItemType SymbolicLink	 -Path "$prof\ohmyposhv3-v2.json" -Target $pwd\ohmyposhv3-v2.json
+$dest = $($pwd.Path+'\Profile.ps1')
+$source = "$prof\Profile.ps1" 
+New-Item -ItemType SymbolicLink -Path $source -Target $dest
+New-Item -ItemType SymbolicLink	-Path "$prof\ohmyposhv3-v2.json" -Target "$pwd.Path'\ohmyposhv3-v2.json'"
+
 
 #yasb
 #komorebi
@@ -28,7 +31,7 @@ New-Item -ItemType SymbolicLink	 -Path "$prof\ohmyposhv3-v2.json" -Target $pwd\o
 #Remove-Item "$prof\ohmyposhv3-v2.json"
 
 #rm $prof\Profile.ps1
-cp Profile.ps1 
-cp ohmyposhv3-v2.json $prof
+#cp Profile.ps1 $prof
+#cp ohmyposhv3-v2.json $prof
 
 #ls C:\Users\howie\Documents\Powershell   
